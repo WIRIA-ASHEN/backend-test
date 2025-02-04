@@ -16,12 +16,16 @@ class AuthController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
+            'nim' => 'required|min:10',
+            'ymd' => 'required|date',
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'nim' => $request->nim,
+            'ymd' => $request->ymd,
         ]);
 
         return response()->json(['message' => 'User registered successfully'], 201);
