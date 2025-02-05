@@ -1,0 +1,59 @@
+{
+    "info": {
+      "name": "API Testing - User Login",
+      "description": "Collection untuk testing login API"
+    },
+    "item": [
+      {
+        "name": "User Login",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {
+                "key": "email",
+                "value": "wiria@gmail.com",
+                "type": "text"
+              },
+              {
+                "key": "password",
+                "value": "123456",
+                "type": "text"
+              }
+            ]
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/login",
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "port": "8000",
+            "path": [
+              "api",
+              "login"
+            ]
+          }
+        },
+        "response": [
+          {
+            "code": 200,
+            "status": "OK",
+            "body": "{\"token\": \"2|uSmcN8X2JczZrVO7e1pshlMXdij0QZsaPPk4ekn758e2a399\"}",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "name": "User Login Success Response"
+          }
+        ]
+      }
+    ]
+  }
+  

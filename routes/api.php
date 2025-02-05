@@ -20,4 +20,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/users/search/nim/{nim}', [UserController::class, 'searchByNIM']);
     Route::get('/users/search/ymd/{ymd}', [UserController::class, 'searchByYMD']);
     Route::get('/external-data', [UserController::class, 'fetchExternalData']);
+    Route::get('/externaldata-todatabase', [UserController::class, 'fetchExternaltoDatabese']);
 });

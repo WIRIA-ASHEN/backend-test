@@ -1,0 +1,175 @@
+{
+    "info": {
+        "name": "API Testing - CRUD User",
+        "description": "Postman Collection untuk CRUD Users"
+    },
+    "item": [{
+            "name": "Get All Users",
+            "request": {
+                "method": "GET",
+                "header": [{
+                    "key": "Authorization",
+                    "value": "Bearer 2|uSmcN8X2JczZrVO7e1pshlMXdij0QZsaPPk4ekn758e2a399",
+                    "type": "text"
+                }],
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/users",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "users"
+                    ]
+                }
+            },
+            "response": [{
+                "code": 200,
+                "status": "OK",
+                "body": "[{\"id\":1,\"name\":\"wiria\",\"email\":\"wiria@gmail.com\",\"password\":\"$2y$12$XHuh8iWV99cJT7OpxdnzreZ5NwgU2NswEH1xrytf7z0Gt4Dg0ATj2\",\"nim\":\"2101162018\",\"ymd\":\"2002-05-30\",\"created_at\":\"2025-02-05T05:17:10.000000Z\",\"updated_at\":\"2025-02-05T05:17:10.000000Z\"}]",
+                "header": [{
+                    "key": "Content-Type",
+                    "value": "application/json"
+                }],
+                "name": "Get All Users Response"
+            }]
+        },
+        {
+            "name": "Get User By ID",
+            "request": {
+                "method": "GET",
+                "header": [{
+                    "key": "Authorization",
+                    "value": "Bearer 2|uSmcN8X2JczZrVO7e1pshlMXdij0QZsaPPk4ekn758e2a399",
+                    "type": "text"
+                }],
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/users/1",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "users",
+                        "1"
+                    ]
+                }
+            },
+            "response": [{
+                "code": 200,
+                "status": "OK",
+                "body": "{\"id\":1,\"name\":\"wiria\",\"email\":\"wiria@gmail.com\",\"password\":\"$2y$12$XHuh8iWV99cJT7OpxdnzreZ5NwgU2NswEH1xrytf7z0Gt4Dg0ATj2\",\"nim\":\"2101162018\",\"ymd\":\"2002-05-30\",\"created_at\":\"2025-02-05T05:17:10.000000Z\",\"updated_at\":\"2025-02-05T05:17:10.000000Z\"}",
+                "header": [{
+                    "key": "Content-Type",
+                    "value": "application/json"
+                }],
+                "name": "Get User By ID Response"
+            }]
+        },
+        {
+            "name": "Update User",
+            "request": {
+                "method": "PUT",
+                "header": [{
+                        "key": "Authorization",
+                        "value": "Bearer 2|uSmcN8X2JczZrVO7e1pshlMXdij0QZsaPPk4ekn758e2a399",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [{
+                            "key": "name",
+                            "value": "wiria ashen",
+                            "type": "text"
+                        },
+                        {
+                            "key": "nim",
+                            "value": "2101162017",
+                            "type": "text"
+                        },
+                        {
+                            "key": "ymd",
+                            "value": "2002-07-15",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/users/1",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "users",
+                        "1"
+                    ]
+                }
+            },
+            "response": [{
+                "code": 200,
+                "status": "OK",
+                "body": "{\"message\":\"User berhasil diperbarui\"}",
+                "header": [{
+                    "key": "Content-Type",
+                    "value": "application/json"
+                }],
+                "name": "Update User Response"
+            }]
+        },
+        {
+            "name": "Delete User",
+            "request": {
+                "method": "DELETE",
+                "header": [{
+                    "key": "Authorization",
+                    "value": "Bearer 2|uSmcN8X2JczZrVO7e1pshlMXdij0QZsaPPk4ekn758e2a399",
+                    "type": "text"
+                }],
+                "url": {
+                    "raw": "http://127.0.0.1:8000/api/users/1",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "users",
+                        "1"
+                    ]
+                }
+            },
+            "response": [{
+                "code": 200,
+                "status": "OK",
+                "body": "{\"message\":\"Data berhasil dihapus\"}",
+                "header": [{
+                    "key": "Content-Type",
+                    "value": "application/json"
+                }],
+                "name": "Delete User Response"
+            }]
+        }
+    ]
+}

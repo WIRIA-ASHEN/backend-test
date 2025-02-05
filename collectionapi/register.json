@@ -1,0 +1,73 @@
+{
+  "info": {
+    "name": "API Testing - Register User",
+    "description": "Collection untuk testing memebuat akun API"
+  },
+  "item": [
+    {
+      "name": "User Registration",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "wiria",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "wiria@gmail.com",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "123456",
+              "type": "text"
+            },
+            {
+              "key": "nim",
+              "value": "2101162018",
+              "type": "text"
+            },
+            {
+              "key": "ymd",
+              "value": "2002-05-30",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/register",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "register"
+          ]
+        }
+      },
+      "response": [
+        {
+          "code": 201,
+          "status": "Created",
+          "body": "{\"message\": \"User berhasil dibuat\"}",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "name": "User Registration Success Response"
+        }
+      ]
+    }
+  ]
+}

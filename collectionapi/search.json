@@ -1,0 +1,118 @@
+{
+    "info": {
+      "name": "API Testing - Search Users",
+      "description": "Postman Collection Untuk mencari NIM,NAMA,YMD."
+    },
+    "item": [
+      {
+        "name": "Search by Name - Turner Mia",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer 2|uSmcN8X2JczZrVO7e1pshlMXdij0QZsaPPk4ekn758e2a399",
+              "type": "text"
+            }
+          ],
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/users/search/name/Turner%20Mia",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["api", "users", "search", "name", "Turner Mia"]
+          }
+        },
+        "response": [
+          {
+            "name": "Response - Search Name Turner Mia",
+            "status": "200 OK",
+            "body": [
+              {
+                "YMD": "20220713",
+                "NAMA": "Turner Mia",
+                "NIM": "9352078461"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Search by NIM - 9352078461",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer 2|uSmcN8X2JczZrVO7e1pshlMXdij0QZsaPPk4ekn758e2a399",
+              "type": "text"
+            }
+          ],
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/users/search/nim/9352078461",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["api", "users", "search", "nim", "9352078461"]
+          }
+        },
+        "response": [
+          {
+            "name": "Response - Search NIM 9352078461",
+            "status": "200 OK",
+            "body": [
+              {
+                "NAMA": "Turner Mia",
+                "NIM": "9352078461",
+                "YMD": "20220713"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Search by YMD - 20230405",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer 2|uSmcN8X2JczZrVO7e1pshlMXdij0QZsaPPk4ekn758e2a399",
+              "type": "text"
+            }
+          ],
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/users/search/ymd/20230405",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["api", "users", "search", "ymd", "20230405"]
+          }
+        },
+        "response": [
+          {
+            "name": "Response - Search YMD 20230405",
+            "status": "200 OK",
+            "body": [
+              {
+                "YMD": "20230405",
+                "NIM": "1206485739",
+                "NAMA": "Aiden Hayes"
+              },
+              {
+                "YMD": "20230405",
+                "NIM": "5036487912",
+                "NAMA": "Hill Elijah"
+              },
+              {
+                "YMD": "20230405",
+                "NIM": "8761043925",
+                "NAMA": "Sophia Martinez"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
