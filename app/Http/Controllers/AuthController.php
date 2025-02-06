@@ -28,7 +28,7 @@ class AuthController extends Controller
             'ymd' => $request->ymd,
         ]);
 
-        return response()->json(['message' => 'User registered successfully'], 201);
+        return response()->json(['message' => 'User berhasil dibuat'], 201);
     }
 
 

@@ -143,35 +143,27 @@ class UserController extends Controller
         $headerRow = true;
 
         foreach ($rows as $row) {
-            // Skip baris header yang berisi "NAMA|NIM|YMD"
             if ($headerRow) {
-                $headerRow = false;  // Set flag untuk baris header ke false
-                continue;  // Lewati baris ini
+                $headerRow = false;
+                continue;
             }
 
             // Pisahkan setiap baris berdasarkan delimiter '|'
             $columns = explode('|', $row);
 
-            // Pastikan ada data yang valid (jumlah kolom yang benar)
             if (count($columns) > 1) {
                 $rowData = [];
 
-                // Loop untuk memeriksa setiap kolom berdasarkan jenis data
                 foreach ($columns as $value) {
-                    // Mencocokkan kolom berdasarkan isi
                     if (is_numeric($value) && strlen($value) == 8) {
-                        // Jika nilai memiliki format tanggal (YYYY-MM-DD), anggap sebagai YMD
                         $rowData['YMD'] = $value;
                     } elseif (is_numeric($value) && strlen($value) == 10) {
-                        // Jika nilai adalah angka dengan panjang 10 karakter, anggap sebagai NIM
-                        $rowData['NIM'] = (int) $value;  // Ubah menjadi integer
+                        $rowData['NIM'] = (int) $value;
                     } else {
-                        // Jika tidak sesuai dengan pola di atas, anggap sebagai NAMA
                         $rowData['NAMA'] = $value;
                     }
                 }
 
-                // Masukkan data ke dalam array yang siap dimasukkan ke database
                 $parsedData[] = $rowData;
 
                 // Simpan data ke database
@@ -183,6 +175,11 @@ class UserController extends Controller
             }
         }
 
-        return $parsedData;  // Mengembalikan data yang telah diproses
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Data imported successfully',
+            'count' => count($parsedData)
+        ], 200);
     }
+
 }

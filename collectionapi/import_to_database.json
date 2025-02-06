@@ -1,0 +1,41 @@
+{
+    "info": {
+      "name": "API Testing - Import External Data to Database",
+      "description": "Postman Collection untuk import data realtime ke database."
+    },
+    "item": [
+      {
+        "name": "Import External Data to Database",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer 2|uSmcN8X2JczZrVO7e1pshlMXdij0QZsaPPk4ekn758e2a399",
+              "type": "text"
+            }
+          ],
+          "url": {
+            "raw": "http://127.0.0.1:8000/api/externaldata-todatabase",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["api", "externaldata-todatabase"]
+          }
+        },
+        "response": [
+          {
+            "name": "Response - Import Data",
+            "status": "200 OK",
+            "body": {
+              "status": "success",
+              "message": "Data imported successfully",
+              "count": 421,
+              "imported_records": 150
+            }
+          }
+        ]
+      }
+    ]
+  }
+  
